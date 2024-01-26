@@ -22,6 +22,20 @@ Rebuild.
 
 ## Usage
 
+To use the launch files you will need to have PX4-Autopilot and QGroundControl installed and compiled in your computer. After that, from the catkin workspace folder, export the PX4-Autopilot Path and source it. An example is:
+
+`$ export ROS_PACKAGE_PATH=(PATH_TO_PX4-Autopilot):(PATH_TO_PX4-Autopilot)/Tools/simulation/gazebo-classic/sitl_gazebo-classic:$ROS_PACKAGE_PATH`
+
+`$ source (PATH_TO_PX4-Autopilot)/Tools/simulation/gazebo-classic/setup_gazebo.bash (PATH_TO_PX4-Autopilot)/PX4-Autopilot (PATH_TO_PX4-Autopilot)/PX4-Autopilot/build/px4_sitl_default`
+
+Then run the following launch files:
+
+`$ roslaunch gazebo_dvs_plugin gazebo_dvs.launch`
+
+`$ roslaunch dvs_renderer davis_mono_events_only.launch`
+
+In the Rviz and RQT windows, you can see the RGB images and associated Events.
+
 This plugin can be used as a drop-in replacement for normal Gazebo camera plugins.
 Both, the DVS plugin and the [CameraPlugin](https://bitbucket.org/osrf/gazebo/src/666bf30ad9a3c042955b55f79cf1a5416a70d83d/plugins/CameraPlugin.cc)
 use the Gazebo [CameraSensor](https://bitbucket.org/osrf/gazebo/src/666bf30ad9a3c042955b55f79cf1a5416a70d83d/gazebo/sensors/CameraSensor.cc) internally.
