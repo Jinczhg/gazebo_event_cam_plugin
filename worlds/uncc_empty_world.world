@@ -1,0 +1,28 @@
+<?xml version="1.0"?> 
+<sdf version="1.4">
+  <world name="uncc_move_target">
+
+    <!-- Ground Plane --->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://asphalt_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <scene>
+      <ambient>1.0 1.0 1.0 1.0</ambient>
+      <grid>false</grid>
+      <sky>
+        <clouds>
+          <speed>1</speed>
+        </clouds>
+      </sky>
+    </scene>
+
+  </world>
+</sdf>
