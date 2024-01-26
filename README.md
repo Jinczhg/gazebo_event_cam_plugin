@@ -4,19 +4,19 @@ This package provides a DVS simulation implemented as a Gazebo plugin.
 
 ## Install
 
-$ mkdir -p catkin_ws/src
+`$ mkdir -p catkin_ws/src`
 
-$ cd catkin_ws
+`$ cd catkin_ws`
 
 First, clone the following ROS DVS package which is supported under ROS Kinetic (Ubuntu 16.04), ROS Melodic (Ubuntu 18.04) and ROS Noetic (Ubuntu 20.04).
 
-$ git clone https://github.com/uzh-rpg/rpg_dvs_ros 
+`$ git clone https://github.com/uzh-rpg/rpg_dvs_ros `
 
-$ git clone https://github.com/catkin/catkin_simple.git
+`$ git clone https://github.com/catkin/catkin_simple.git`
 
 Build the packages to make sure the DVS datatypes are supported now.
 
-$ git clone https://github.com/Jinczhg/gazebo_event_cam_plugin.git
+`$ git clone https://github.com/Jinczhg/gazebo_event_cam_plugin.git`
 
 Rebuild.
 
@@ -26,7 +26,7 @@ This plugin can be used as a drop-in replacement for normal Gazebo camera plugin
 Both, the DVS plugin and the [CameraPlugin](https://bitbucket.org/osrf/gazebo/src/666bf30ad9a3c042955b55f79cf1a5416a70d83d/plugins/CameraPlugin.cc)
 use the Gazebo [CameraSensor](https://bitbucket.org/osrf/gazebo/src/666bf30ad9a3c042955b55f79cf1a5416a70d83d/gazebo/sensors/CameraSensor.cc) internally.
 
-The following XACRO snippet shows an example of usage (can also be found in line 317-374 in xacro/iris.xacro):
+The following XACRO snippet shows an example of usage (can also be found in lines 317-374 in _xacro/iris.xacro_):
 
     <sensor name='event_camera' type='camera'>
         <camera name='dvs_event_cam'>
@@ -63,11 +63,11 @@ The sensor parameter `update_rate` has only limited effect in Gazebo.
 The real rate is determined by the rendering pipeline and can be way lower than the specified rate.
 Still, this implementation yields a higher event frequency than similar Python-based implementations as a standalone node.
 
-Useful commands to convert a Xacro file to a URDF file or a SDF file are:
+#### Useful commands to convert a Xacro file to a URDF file or a SDF file:
 
-$ xacro iris.xacro > model.urdf 
+`$ xacro iris.xacro > model.urdf `
 
-$ gz sdf -p model.urdf > model.sdf
+`$ gz sdf -p model.urdf > model.sdf`
 
 # Acknowledgement
 
